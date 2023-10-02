@@ -1,0 +1,33 @@
+﻿@model Calculator;
+
+@{
+    ViewData["Title"] = "Kalkulator";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="calculator-wrapper">
+        <fieldset class="calculator">
+            <legend> Calculator </legend>
+            
+            <label>First number</label>
+            @Html.EditorFor(x => x.A)
+            
+            <label >Second number</label>
+            @Html.EditorFor(x => x.B)
+            <input class="calc-action" type="submit" value="+" name="command">
+            <input class="calc-action" type="submit" value="-" name="command">
+            <input class="calc-action" type="submit" value="*" name="command">
+            <input class="calc-action" type="submit" value="/" name="command">
+        </fieldset>
+
+        <div class="result-wrapper">
+            <h3>Result</h3>
+            <p class="result">
+                @Html.DisplayFor(x => x.Result)
+            </p>
+        </div>
+    </div>
+
+}
+@ViewBag.wynik
